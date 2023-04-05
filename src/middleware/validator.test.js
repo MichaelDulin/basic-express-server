@@ -16,12 +16,11 @@ describe("Testing validator", () => {
     expect(req.query.name).toEqual('michael');
     expect(next).toHaveBeenCalled();
   });
-
-  test('no name in validaor', () => {
+  test('no name in validator', () => {
     const request = {query: {}};
     const response = {};
     const next = jest.fn();
-    validaor(request, response, next);
+    validator(request, response, next);
     expect(next).toHaveBeenCalledWith('Error: no name found');
   });
 });
